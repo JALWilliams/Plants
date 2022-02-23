@@ -8,7 +8,7 @@ var FilterController = {
 
   Filter: function(req,res){
     // console.log(req.query)
-    if(req.query.sunlight=='' && req.query.moisture=='' && req.query.indoorFlowering==''){
+    if(req.query.sunlight=='' && req.query.moisture=='' && req.query.indoorFlowering=='' && req.query.toxicToAnimals==''){
       res.redirect('/plants');
     } else{   
     
@@ -16,8 +16,9 @@ var FilterController = {
       Sunlight: req.query.sunlight,
       Moisture: req.query.moisture,
       Indoor_Flowering: req.query.indoorFlowering,
-      Toxic_Dogs: req.query.toxicToDogs,
-      Toxic_Cats: req.query.toxicToCats,
+      Toxic_Dogs: req.query.toxicToAnimals, 
+      // Toxic_Dogs: req.query.toxicToDogs,
+      // Toxic_Cats: req.query.toxicToCats,
       Indoor_Height: req.query.indoorHeight,
       Indoor_Spread: req.query.indoorSpread
       }).exec(function (err, filtered_plants){
