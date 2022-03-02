@@ -1,110 +1,146 @@
+<style>
+
+  .flexibox{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color:green;
+
+  }
+
+  .flexibox-input{
+    width:300px;
+    min-height:250px;
+    margin: 5px;
+    background-color: rgb(175, 225, 175);
+    text-align: center;
+    padding-top: 60px;
+    border-radius: 25px;
+  }
+
+  .flexibox-5{
+    background-color: white;
+  }
+
+</style>
 
 
-<h1>Select Your Filters!</h1>
+<h1 class='pageTitle'> Find your perfect plant</h1>
 
-<form id="plant-filtering-form" action='/filter/new' method="GET" >
-  <label for="sunlight">Sunlight:</label>
-    <select id="sunlight" name="sunlight">
-      <option value=""></option>
-      <option value="full-sun">Full Sun</option>
-      <option value="full-sun-to-part-sun">Full Sun to Part Sun</option>
-      <option value="part-shade">Part Shade</option>
-      <option value="full-sun-to-part-shade">Full Sun to Part Shade</option>
-      <option value="full-shade-to-part-shade">Full Shade to Part Shade</option>
+<form id='plant-filtering-form' action='/filter/results' method="GET" >  
+<div class='flexibox'>
+  <div class='flexibox-input flexibox-1'>
+    <h2> <label for="sunlight">SUNLIGHT</label></h2>
+    <br>
+    <select id="sunlight" name="sunlight" class="btn btn-primary outline">
+      <option value="Full sun">Full Sun</option>
+       <option value="Full sun to part sun">Full Sun to Part Sun</option>
+       <option value="Full sun to part shade">Full Sun to Part Shade</option>
+       <option value="Part shade">Part Shade</option>
+       <option value="Part shade to full shade">Part shade to full shade</option>
+       <option value="Part sun to part shade">Part sun to part shade</option>
     </select>
-  <br>  
-  <label for="moisture">Moisture:</label>
-    <select id="moisture" name="moisture">
-      <option value=""></option>
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
-      <option value="low-to-medium">Low to Medium</option>
-      <option value="medium-to-high">Medium to High</option>
+  </div>
+  <div class='flexibox-input flexibox-2'>
+    <h2> <label for="moisture">MOISTURE</label></h2>
+     <select id="moisture" name="moisture" class="btn btn-primary outline">
+      <option value="Low">Low</option>
+      <option value="Low to medium">Low to Medium</option>
+      <option value="Medium">Medium</option>
+      <option value="Medium to high">Medium to High</option>
     </select>
-  <br>  
-  <label for="indoor-flowering">Indoor Flowering:</label>
-    <select id="indoor-flowering" name="indoor-flowering">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-      <option value="rarely">Rarely</option>
-      <option value="n/a">N/A</option>
+  </div>
+  <div class='flexibox-input flexibox-3'>
+    <h2><label for="indoor-flowering">INDOOR FLOWERING</label></h2>
+    <select id="indoor-flowering" name="indoorFlowering" class="btn btn-primary outline">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="Rarely">Rarely</option>
+      <option value="N/A">N/A</option>
     </select>
-  <br>  
-  <label for="toxic-to-dogs">Toxic to Dogs:</label>
-    <select id="toxic-to-dogs" name="toxic-to-dogs">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  <br>  
-  <label for="toxic-to-cats">Toxic to Cats:</label>
-    <select id="toxic-to-cats" name="toxic-to-cats">
-      <option value=""></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  <br>
-  <label for="indoor-height">Indoor Height:</label>
-    <select id="indoor-spread" name="indoor-spread">
-      <option value=""></option>
-      <option value="0.25-to-0.75-feet">0.25 to 0.75 feet</option>
-      <option value="0.50-to-1.00-feet">0.50 to 1.00 feet</option>
-      <option value="0.50-to-2.00-feet">0.50 to 2.00 feet</option>
-      <option value="0.50-to-6.00-feet">0.50 to 6.00 feet</option>
-      <option value="0.50-to-8.00-feet">0.50 to 8.00 feet</option>
-      <option value="1.00-to-1.50-feet">1.00 to 1.50 feet</option>
-      <option value="1.00-to-2.00-feet">1.00 to 2.00 feet</option>
-      <option value="1.00-to-3.00-feet">1.00 to 3.00 feet</option>
-      <option value="1.00-to-5.00-feet">1.00 to 5.00 feet</option>
-      <option value="1.00-to-6.00-feet">1.00 to 6.00 feet</option>
-      <option value="1.50-to-2.00-feet">1.50 to 2.00 feet</option>
-      <option value="1.50-to-3.00-feet">1.50 to 3.00 feet</option>
-      <option value="2.00-to-3.00-feet">2.00 to 3.00 feet</option>
-      <option value="2.00-to-5.00-feet">2.00 to 5.00 feet</option>
-      <option value="2.00-to-6.00-feet">2.00 to 6.00 feet</option>
-      <option value="2.00-to-10.00-feet">2.00 to 10.00 feet</option>
-      <option value="3.00-to-4.00-feet">3.00 to 4.00 feet</option>
-      <option value="3.00-to-6.00-feet">3.00 to 6.00 feet</option>
-      <option value="3.00-to-8.00-feet">3.00 to 8.00 feet</option>
-      <option value="4.00-to-5.00-feet">4.00 to 5.00 feet</option>
-      <option value="4.00-to-8.00-feet">4.00 to 8.00 feet</option>
-      <option value="6.00-to-8.00-feet">6.00 to 8.00 feet</option>
-    </select>
-  <br>  
-  <label for="indoor-spread">Indoor Spread:</label>
-    <select id="indoor-spread" name="indoor-spread">
-      <option value=""></option>
-      <option value="0.00-to-0.00-feet">0.00 to 0.00 feet</option>
-      <option value="0.00-to-0.50-feet">0.00 to 0.50 feet</option>
-      <option value="0.00-to-0.75-feet">0.00 to 0.75 feet</option>
-      <option value="0.25-to-0.75-feet">0.25 to 0.75 feet</option>
-      <option value="0.50-to-0.75-feet">0.50 to 0.75 feet</option>
-      <option value="0.50-to-1.00-feet">0.50 to 1.00 feet</option>
-      <option value="0.50-to-1.50-feet">0.50 to 1.50 feet</option>
-      <option value="0.50-to-2.00-feet">0.50 to 2.00 feet</option>
-      <option value="0.75-to-1.00-feet">0.75 to 1.00 feet</option>
-      <option value="0.75-to-2.00-feet">0.75 to 2.00 feet</option>
-      <option value="1.00-to-1.20-feet">1.00 to 1.20 feet</option>
-      <option value="1.00-to-1.50-feet">1.00 to 1.50 feet</option>
-      <option value="1.00-to-1.75-feet">1.00 to 1.75 feet</option>
-      <option value="1.00-to-2.00-feet">1.00 to 2.00 feet</option>
-      <option value="1.00-to-3.00-feet">1.00 to 3.00 feet</option>
-      <option value="1.00-to-4.00-feet">1.00 to 4.00 feet</option>
-      <option value="1.00-to-5.00-feet">1.00 to 5.00 feet</option>
-      <option value="1.00-to-6.00-feet">1.00 to 6.00 feet</option>
-      <option value="1.50-to-2.50-feet">1.50 to 2.50 feet</option>
-      <option value="1.50-to-3.00-feet">1.50 to 3.00 feet</option>
-      <option value="2.00-to-3.00-feet">2.00 to 3.00 feet</option>
-      <option value="2.00-to-4.00-feet">2.00 to 4.00 feet</option>
-      <option value="2.00-to-7.50-feet">2.00 to 7.50 feet</option>
-      <option value="3.00-to-5.00-feet">3.00 to 5.00 feet</option>
-      <option value="4.00-to-5.00-feet">4.00 to 5.00 feet</option>
-    </select>
-  <br>  
-  <input type="submit" value="Submit">
+  </div>
+  <div class='flexibox-input flexibox-4'>
+    <h2><label for="toxic-to-animals">TOXIC TO ANIMALS</label> </h2>
+    <select id="toxic-to-animals" name="toxicToAnimals" class="btn btn-primary outline">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select> 
+  </div>
+  <div class='flexibox-input flexibox-5'>
+    <input class="btn btn-primary btn-lg outline" type="submit" value="Submit">
+  </div>
+</div>
 </form>
 
 
 
+  <!-- <label for="toxic-to-dogs">Toxic to Dogs:</label>
+    <select id="toxic-to-dogs" name="toxicToDogs">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select> 
+  <br>  
+  <label for="toxic-to-cats">Toxic to Cats:</label>
+     <select id="toxic-to-cats" name="toxicToCats">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select> -->
+  <!-- <br>  
+  <label for="indoor-height">Indoor Height:</label>
+     <select id="indoor-height" name="indoorHeight">
+       <option value="0.25 to 0.75 feet">0.25 to 0.75 feet</option>
+       <option value="0.50 to 1.00 feet">0.50 to 1.00 feet</option>
+       <option value="0.50 to 2.00 feet">0.50 to 2.00 feet</option>
+       <option value="0.50 to 6.00 feet">0.50 to 6.00 feet</option>
+       <option value="0.50 to 8.00 feet">0.50 to 8.00 feet</option>
+       <option value="1.00 to 1.50 feet">1.00 to 1.50 feet</option>
+       <option value="1.00 to 2.00 feet">1.00 to 2.00 feet</option>
+       <option value="1.00 to 3.00 feet">1.00 to 3.00 feet</option>
+       <option value="1.00 to 5.00 feet">1.00 to 5.00 feet</option>
+       <option value="1.00 to 6.00 feet">1.00 to 6.00 feet</option>
+       <option value="1.50 to 2.00 feet">1.50 to 2.00 feet</option>
+       <option value="1.50 to 3.00 feet">1.50 to 3.00 feet</option>
+       <option value="2.00 to 10.00 feet">2.00 to 10.00 feet</option>
+       <option value="2.00 to 3.00 feet">2.00 to 3.00 feet</option>
+       <option value="2.00 to 5.00 feet">2.00 to 5.00 feet</option>
+       <option value="2.00 to 6.00 feet">2.00 to 6.00 feet</option>
+       <option value="3.00 to 4.00 feet">3.00 to 4.00 feet</option>
+       <option value="3.00 to 6.00 feet">3.00 to 6.00 feet</option>
+       <option value="3.00 to 8.00 feet">3.00 to 8.00 feet</option>
+       <option value="4.00 to 5.00 feet">4.00 to 5.00 feet</option>
+       <option value="4.00 to 8.00 feet">4.00 to 8.00 feet</option>
+       <option value="6.00 to 8.00 feet">6.00 to 8.00 feet</option>
+     </select>
+   <br>  
+   <label for="indoor-spread">Indoor Spread:</label>
+     <select id="indoor-spread" name="indoorSpread">
+       <option value="0.00 to 0.00 feet">0.00 to 0.00 feet</option>
+       <option value="0.00 to 0.50 feet">0.00 to 0.50 feet</option>
+       <option value="0.00 to 0.75 feet">0.00 to 0.75 feet</option>
+       <option value="0.25 to 0.75 feet">0.25 to 0.75 feet</option>
+       <option value="0.50 to 0.75 feet">0.50 to 0.75 feet</option>
+       <option value="0.50 to 1.00 feet">0.50 to 1.00 feet</option>
+       <option value="0.50 to 1.50 feet">0.50 to 1.50 feet</option>
+       <option value="0.50 to 2.00 feet">0.50 to 2.00 feet</option>
+       <option value="0.75 to 1.00 feet">0.75 to 1.00 feet</option>
+       <option value="0.75 to 2.00 feet">0.75 to 2.00 feet</option>
+       <option value="1.00 to 1.20 feet">1.00 to 1.20 feet</option>
+       <option value="1.00 to 1.50 feet">1.00 to 1.50 feet</option>
+       <option value="1.00 to 1.75 feet">1.00 to 1.75 feet</option>
+       <option value="1.00 to 2.00 feet">1.00 to 2.00 feet</option>
+       <option value="1.00 to 3.00 feet">1.00 to 3.00 feet</option>
+       <option value="1.00 to 4.00 feet">1.00 to 4.00 feet</option>
+       <option value="1.00 to 5.00 feet">1.00 to 5.00 feet</option>
+       <option value="1.00 to 6.00 feet">1.00 to 6.00 feet</option>
+       <option value="1.25 to 4.00 feet">1.25 to 4.00 feet</option>
+       <option value="1.50 to 2.50 feet">1.50 to 2.50 feet</option>
+       <option value="1.50 to 3.00 feet">1.50 to 3.00 feet</option>
+       <option value="2.00 to 3.00 feet">2.00 to 3.00 feet</option>
+       <option value="2.00 to 4.00 feet">2.00 to 4.00 feet</option>
+       <option value="2.00 to 7.50 feet">2.00 to 7.50 feet</option>
+       <option value="3.00 to 5.00 feet">3.00 to 5.00 feet</option>
+       <option value="4.00 to 5.00 feet">4.00 to 5.00 feet</option>
+     </select> -->
+  
